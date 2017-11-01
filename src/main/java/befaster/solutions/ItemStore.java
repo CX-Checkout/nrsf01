@@ -15,13 +15,19 @@ public class ItemStore {
 	private static final MultiSaveGroup B_SAVES = new MultiSaveGroup(Arrays.asList(
 			new MultiSave(2, 60 - 45)
 	));
+	
+	private static final MultiSaveGroup F_SAVES = new MultiSaveGroup(Arrays.asList(
+			new MultiSave(3, 30 - 20)
+	));
+	
 	public static final Item A = new Item('A', 50, A_SAVES);
 	public static final Item B = new Item('B', 30, B_SAVES);
 	public static final Item C = new Item('C', 20);
 	public static final Item D = new Item('D', 15);
 	public static final Item E = new Item('E', 40);
+	public static final Item F = new Item('F', 10, F_SAVES);
 
-	private static final List<Item> items = Arrays.asList(A, B, C, D, E);
+	private static final List<Item> items = Arrays.asList(A, B, C, D, E, F);
 	
 	public static final List<FreebieIdentifier> FREEBIES = Arrays.asList(
 			new FreebieIdentifier(E, 2, B)

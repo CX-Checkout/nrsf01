@@ -10,7 +10,8 @@ import org.junit.Test;
 
 public class OrderPricerTest {
 
-	private List<FreebieIdentifier> freebieIdentifiers = Collections.singletonList(new FreebieIdentifier(ItemStore.E, 2, ItemStore.B));
+	private List<FreebieIdentifier> freebieIdentifiers = Arrays.asList(new FreebieIdentifier(ItemStore.E, 2, ItemStore.B),
+			new FreebieIdentifier(ItemStore.F, 2, ItemStore.F));
 	private OrderPricer underTest = new OrderPricer(freebieIdentifiers);
 	
 	@Test

@@ -2,6 +2,8 @@ package befaster.solutions;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class CheckoutTest {
@@ -48,11 +50,19 @@ public class CheckoutTest {
 	
 	@Test
 	public void checkoutLotsOfItemsWithMultipleMultiSaves() {
-		assertEquals(470, Checkout.checkout("ABCDEABCDABCABAA").intValue());
+		assertEquals(480, Checkout.checkout("ABCDEABCDABCABAAF").intValue());
 	}
 	
 	@Test
 	public void checkoutLotsOfItemsWithMultipleMultiSavesAndFreebie() {
-		assertEquals(495, Checkout.checkout("ABCDEABCDABCABAAE").intValue());
+		assertEquals(515, Checkout.checkout("ABCDEABCDABCABAAEFF").intValue());
+	}
+	
+	@Test
+	public void priceFs() {
+		assertEquals(20, Checkout.checkout("FF").intValue());
+		assertEquals(20, Checkout.checkout("FFF").intValue());
+		assertEquals(30, Checkout.checkout("FFFF").intValue());
+		assertEquals(40, Checkout.checkout("FFFFFF").intValue());
 	}
 }
