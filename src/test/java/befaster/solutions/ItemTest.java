@@ -2,11 +2,13 @@ package befaster.solutions;
 
 import static org.junit.Assert.*;
 
+import java.util.Collections;
+
 import org.junit.Test;
 
 public class ItemTest {
 
-	private Item itemWithSave = new Item('E', 13, new MultiSave(4, 52 - 50));
+	private Item itemWithSave = new Item('E', 13, new MultiSaveGroup(Collections.singletonList(new MultiSave(4, 52 - 50))));
 	private Item itemWithoutSave = new Item('F', 13);
 	
 	@Test

@@ -3,16 +3,16 @@ package befaster.solutions;
 public class Item {
 	private char sku;
 	private int price;
-	private MultiSave multiSave;
+	private MultiSaveGroup multiSaveGroup;
 	
 	public Item(char sku, int price) {
-		this(sku, price, MultiSave.NO_MULTI_SAVE);
+		this(sku, price, MultiSaveGroup.NO_MULTI_SAVES);
 	}
 	
-	public Item(char sku, int price, MultiSave multiSave) {
+	public Item(char sku, int price, MultiSaveGroup multiSaveGroup) {
 		this.sku = sku;
 		this.price = price;
-		this.multiSave = multiSave;
+		this.multiSaveGroup = multiSaveGroup;
 	}
 
 	public char getSku() {
@@ -25,7 +25,7 @@ public class Item {
 	
 	public int priceMany(int count) {
 		int undiscountedPrice = price * count;
-		int discount = multiSave.getDiscount(count);
+		int discount = multiSaveGroup.getDiscount(count);
 		return undiscountedPrice - discount;
 	}
 	

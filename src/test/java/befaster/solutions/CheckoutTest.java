@@ -45,4 +45,14 @@ public class CheckoutTest {
 	public void checkoutLotsOfItemsWithMultiSave() {
 		assertEquals(310, Checkout.checkout("ABCDABCABA").intValue());
 	}
+	
+	@Test
+	public void checkoutLotsOfItemsWithMultipleMultiSaves() {
+		assertEquals(470, Checkout.checkout("ABCDEABCDABCABAA").intValue());
+	}
+	
+	@Test
+	public void checkoutLotsOfItemsWithMultipleMultiSavesAndFreebie() {
+		assertEquals(495, Checkout.checkout("ABCDEABCDABCABAAE").intValue());
+	}
 }

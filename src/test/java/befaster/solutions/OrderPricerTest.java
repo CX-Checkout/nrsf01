@@ -4,12 +4,14 @@ import static org.junit.Assert.*;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import org.junit.Test;
 
 public class OrderPricerTest {
 
-	private OrderPricer underTest = new OrderPricer();
+	private List<FreebieIdentifier> freebieIdentifiers = Collections.singletonList(new FreebieIdentifier(ItemStore.E, 2, ItemStore.B));
+	private OrderPricer underTest = new OrderPricer(freebieIdentifiers);
 	
 	@Test
 	public void priceEmptyList() {
@@ -32,5 +34,14 @@ public class OrderPricerTest {
 				new Order(ItemStore.B, 1),
 				new Order(ItemStore.C, 1),
 				new Order(ItemStore.D, 1))));
+	}
+	
+	@Test
+	public void priceMultipleDifferentItemsWithFreebie() {
+		assertEquals(250, underTest.price(Arrays.asList(new Order(ItemStore.A, 1), 
+				new Order(ItemStore.B, 3),
+				new Order(ItemStore.C, 1),
+				new Order(ItemStore.D, 1),
+				new Order(ItemStore.E, 3))));
 	}
 }

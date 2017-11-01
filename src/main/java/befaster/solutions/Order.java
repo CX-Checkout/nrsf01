@@ -18,6 +18,15 @@ public class Order {
 		return count;
 	}
 
+	public Order removeFree(Order free) {
+		if(free.getItem().equals(this.getItem())) {
+			int newCount = Math.max(0, count - free.getCount());
+			return new Order(item, newCount);
+		} else {
+			return this;
+		}
+	}
+	
 	@Override
 	public int hashCode() {
 		int result = item.hashCode();

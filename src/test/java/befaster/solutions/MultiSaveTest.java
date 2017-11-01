@@ -10,31 +10,31 @@ public class MultiSaveTest {
 
 	@Test
 	public void getDiscountWhenSingleItem() {
-		assertEquals(0, underTest.getDiscount(1));
+		assertEquals(new DiscountResult(0, 1), underTest.getDiscount(1));
 	}
 
 	@Test
 	public void getDiscountWhenCountMatchesSaveQuantity() {
-		assertEquals(10, underTest.getDiscount(3));
+		assertEquals(new DiscountResult(10, 0), underTest.getDiscount(3));
 	}
 	
 	@Test
 	public void getDiscountWhenCountExceedsSaveQuantity() {
-		assertEquals(10, underTest.getDiscount(5));
+		assertEquals(new DiscountResult(10, 2), underTest.getDiscount(5));
 	}
 	
 	@Test
 	public void getDiscountWhenCountIsMultipleOfSaveQuantity() {
-		assertEquals(20, underTest.getDiscount(6));
+		assertEquals(new DiscountResult(20, 0), underTest.getDiscount(6));
 	}
 	
 	@Test
 	public void getDiscountWhenCountExceedsMultipleOfSaveQuantity() {
-		assertEquals(60, underTest.getDiscount(19));
+		assertEquals(new DiscountResult(60, 1), underTest.getDiscount(19));
 	}
 	
 	@Test
 	public void noMultiSaveGivesNoDiscount() {
-		assertEquals(0, MultiSave.NO_MULTI_SAVE.getDiscount(111));
+		assertEquals(new DiscountResult(0, 0), MultiSave.NO_MULTI_SAVE.getDiscount(111));
 	}
 }

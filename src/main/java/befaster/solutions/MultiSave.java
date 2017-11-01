@@ -12,8 +12,10 @@ public class MultiSave {
 		this.discountPerGroup = discountPerGroup;
 	}
 	
-	public int getDiscount(int number) {
+	public DiscountResult getDiscount(int number) {
 		int groups = number / groupSize;
-		return groups * discountPerGroup;
+		int remaining = number % groupSize;
+		int discount = groups * discountPerGroup;
+		return new DiscountResult(discount, remaining);
 	}
 }

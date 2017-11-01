@@ -12,12 +12,12 @@ public class ItemStoreTest {
 	
 	@Test
 	public void getItems() {
-		assertEquals(Arrays.asList(ItemStore.A, ItemStore.B, ItemStore.C, ItemStore.D), underTest.getItems());
+		assertEquals(Arrays.asList(ItemStore.A, ItemStore.B, ItemStore.C, ItemStore.D, ItemStore.E), underTest.getItems());
 	}
 
 	@Test
 	public void getItemSkus() {
-		assertEquals(Arrays.asList('A', 'B', 'C', 'D'), underTest.getItemSkus());
+		assertEquals(Arrays.asList('A', 'B', 'C', 'D', 'E'), underTest.getItemSkus());
 	}
 	
 	@Test
