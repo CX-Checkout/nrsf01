@@ -7,17 +7,22 @@ import java.util.Optional;
 public class OrderPricer {
 
 	private List<FreebieIdentifier> freebieIdentifiers;
+	private GroupDiscount groupDiscount;
 	
-	public OrderPricer(List<FreebieIdentifier> freebieIdentifiers) {
+	public OrderPricer(List<FreebieIdentifier> freebieIdentifiers, GroupDiscount groupDiscount) {
 		this.freebieIdentifiers = freebieIdentifiers;
+		this.groupDiscount = groupDiscount;
 	}
 	
 	public int price(List<Order> orders) {
 		List<Order> paidForOrders = removeFreebies(orders);
 		
-		return paidForOrders.stream()
+		int priceBeforeGroupDiscount = paidForOrders.stream()
 				.map(it -> it.getItem().priceMany(it.getCount()))
 				.reduce(0, (a,b) -> a + b);
+		int netPrice = priceBeforeGroupDiscount - groupDiscount.calculateGroupDiscount(paidForOrders);
+		
+		return netPrice;
 	}
 
 	private List<Order> removeFreebies(List<Order> orders) {

@@ -12,7 +12,8 @@ public class OrderPricerTest {
 
 	private List<FreebieIdentifier> freebieIdentifiers = Arrays.asList(new FreebieIdentifier(ItemStore.E, 2, ItemStore.B),
 			new FreebieIdentifier(ItemStore.F, 2, ItemStore.F));
-	private OrderPricer underTest = new OrderPricer(freebieIdentifiers);
+	private GroupDiscount groupDiscount = new GroupDiscount();
+	private OrderPricer underTest = new OrderPricer(freebieIdentifiers, groupDiscount);
 	
 	@Test
 	public void priceEmptyList() {
@@ -44,5 +45,15 @@ public class OrderPricerTest {
 				new Order(ItemStore.C, 1),
 				new Order(ItemStore.D, 1),
 				new Order(ItemStore.E, 3))));
+	}
+	
+	@Test
+	public void priceMultipleDifferentItemsWithGroupDiscount() {
+		assertEquals(177, underTest.price(Arrays.asList(new Order(ItemStore.A, 1), 
+				new Order(ItemStore.B, 1),
+				new Order(ItemStore.C, 1),
+				new Order(ItemStore.D, 1),
+				new Order(ItemStore.S, 2),
+				new Order(ItemStore.X, 2))));
 	}
 }

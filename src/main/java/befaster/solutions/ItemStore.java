@@ -26,7 +26,7 @@ public class ItemStore {
 	));
 	
 	private static final MultiSaveGroup K_SAVES = new MultiSaveGroup(Arrays.asList(
-			new MultiSave(2, 160 - 150)
+			new MultiSave(2, 140 - 120)
 	));
 	
 	private static final MultiSaveGroup P_SAVES = new MultiSaveGroup(Arrays.asList(
@@ -56,7 +56,7 @@ public class ItemStore {
 	public static final Item H = new Item('H', 10, H_SAVES);
 	public static final Item I = new Item('I', 35);
 	public static final Item J = new Item('J', 60);
-	public static final Item K = new Item('K', 80, K_SAVES);
+	public static final Item K = new Item('K', 70, K_SAVES);
 	public static final Item L = new Item('L', 90);
 	public static final Item M = new Item('M', 15);
 	public static final Item N = new Item('N', 40);
@@ -64,14 +64,14 @@ public class ItemStore {
 	public static final Item P = new Item('P', 50, P_SAVES);
 	public static final Item Q = new Item('Q', 30, Q_SAVES);
 	public static final Item R = new Item('R', 50);
-	public static final Item S = new Item('S', 30);
+	public static final Item S = new Item('S', 20);
 	public static final Item T = new Item('T', 20);
 	public static final Item U = new Item('U', 40, U_SAVES);
 	public static final Item V = new Item('V', 50, V_SAVES);
 	public static final Item W = new Item('W', 20);
-	public static final Item X = new Item('X', 90);
-	public static final Item Y = new Item('Y', 10);
-	public static final Item Z = new Item('Z', 50);
+	public static final Item X = new Item('X', 17);
+	public static final Item Y = new Item('Y', 20);
+	public static final Item Z = new Item('Z', 21);
 
 	private static final List<Item> items = Arrays.asList(A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z);
 	

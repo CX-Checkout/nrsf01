@@ -7,7 +7,8 @@ public class Checkout {
 	
 	private ItemStore itemStore = new ItemStore();
 	private SkuReader skuReader = new SkuReader(itemStore);
-	private OrderPricer orderPricer = new OrderPricer(ItemStore.FREEBIES);
+	private GroupDiscount groupDiscount = new GroupDiscount();
+	private OrderPricer orderPricer = new OrderPricer(ItemStore.FREEBIES, groupDiscount);
 	
 	public static Integer checkout(String skus) {
 		Checkout checkout = new Checkout();

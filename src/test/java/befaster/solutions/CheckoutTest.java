@@ -75,9 +75,9 @@ public class CheckoutTest {
 		assertEquals(135, Checkout.checkout("HHHHHHHHHHHHHHHH").intValue());
 		assertEquals(35, Checkout.checkout("I").intValue());
 		assertEquals(60, Checkout.checkout("J").intValue());
-		assertEquals(80, Checkout.checkout("K").intValue());
-		assertEquals(150, Checkout.checkout("KK").intValue());
-		assertEquals(230, Checkout.checkout("KKK").intValue());
+		assertEquals(70, Checkout.checkout("K").intValue());
+		assertEquals(120, Checkout.checkout("KK").intValue());
+		assertEquals(190, Checkout.checkout("KKK").intValue());
 		assertEquals(90, Checkout.checkout("L").intValue());
 		assertEquals(15, Checkout.checkout("M").intValue());
 		assertEquals(40, Checkout.checkout("N").intValue());
@@ -89,7 +89,7 @@ public class CheckoutTest {
 		assertEquals(80, Checkout.checkout("QQQ").intValue());
 		assertEquals(110, Checkout.checkout("QQQQ").intValue());
 		assertEquals(50, Checkout.checkout("R").intValue());
-		assertEquals(30, Checkout.checkout("S").intValue());
+		assertEquals(20, Checkout.checkout("S").intValue());
 		assertEquals(20, Checkout.checkout("T").intValue());
 		assertEquals(40, Checkout.checkout("U").intValue());
 		assertEquals(120, Checkout.checkout("UUUU").intValue());
@@ -99,9 +99,9 @@ public class CheckoutTest {
 		assertEquals(130, Checkout.checkout("VVV").intValue());
 		assertEquals(180, Checkout.checkout("VVVV").intValue());
 		assertEquals(20, Checkout.checkout("W").intValue());
-		assertEquals(90, Checkout.checkout("X").intValue());
-		assertEquals(10, Checkout.checkout("Y").intValue());
-		assertEquals(50, Checkout.checkout("Z").intValue());
+		assertEquals(17, Checkout.checkout("X").intValue());
+		assertEquals(20, Checkout.checkout("Y").intValue());
+		assertEquals(21, Checkout.checkout("Z").intValue());
 	}
 	
 	@Test
