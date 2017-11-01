@@ -10,7 +10,7 @@ public class CheckoutTest {
 
 	@Test
 	public void returnsNegativeOnInvalidInput() {
-		assertEquals(-1, Checkout.checkout("Z").intValue());
+		assertEquals(-1, Checkout.checkout("_").intValue());
 	}
 	
 	@Test
@@ -64,5 +64,50 @@ public class CheckoutTest {
 		assertEquals(20, Checkout.checkout("FFF").intValue());
 		assertEquals(30, Checkout.checkout("FFFF").intValue());
 		assertEquals(40, Checkout.checkout("FFFFFF").intValue());
+	}
+	
+	@Test
+	public void priceGtoZ() {
+		assertEquals(20, Checkout.checkout("G").intValue());
+		assertEquals(10, Checkout.checkout("H").intValue());
+		assertEquals(45, Checkout.checkout("HHHHH").intValue());
+		assertEquals(80, Checkout.checkout("HHHHHHHHHH").intValue());
+		assertEquals(135, Checkout.checkout("HHHHHHHHHHHHHHHH").intValue());
+		assertEquals(35, Checkout.checkout("I").intValue());
+		assertEquals(60, Checkout.checkout("J").intValue());
+		assertEquals(80, Checkout.checkout("K").intValue());
+		assertEquals(150, Checkout.checkout("KK").intValue());
+		assertEquals(230, Checkout.checkout("KKK").intValue());
+		assertEquals(90, Checkout.checkout("L").intValue());
+		assertEquals(15, Checkout.checkout("M").intValue());
+		assertEquals(40, Checkout.checkout("N").intValue());
+		assertEquals(10, Checkout.checkout("O").intValue());
+		assertEquals(50, Checkout.checkout("P").intValue());
+		assertEquals(200, Checkout.checkout("PPPPP").intValue());
+		assertEquals(250, Checkout.checkout("PPPPPP").intValue());
+		assertEquals(30, Checkout.checkout("Q").intValue());
+		assertEquals(80, Checkout.checkout("QQQ").intValue());
+		assertEquals(110, Checkout.checkout("QQQQ").intValue());
+		assertEquals(50, Checkout.checkout("R").intValue());
+		assertEquals(30, Checkout.checkout("S").intValue());
+		assertEquals(20, Checkout.checkout("T").intValue());
+		assertEquals(40, Checkout.checkout("U").intValue());
+		assertEquals(120, Checkout.checkout("UUUU").intValue());
+		assertEquals(160, Checkout.checkout("UUUUU").intValue());
+		assertEquals(50, Checkout.checkout("V").intValue());
+		assertEquals(90, Checkout.checkout("VV").intValue());
+		assertEquals(130, Checkout.checkout("VVV").intValue());
+		assertEquals(180, Checkout.checkout("VVVV").intValue());
+		assertEquals(20, Checkout.checkout("W").intValue());
+		assertEquals(90, Checkout.checkout("X").intValue());
+		assertEquals(10, Checkout.checkout("Y").intValue());
+		assertEquals(50, Checkout.checkout("Z").intValue());
+	}
+	
+	@Test
+	public void testFreebies() {
+		assertEquals(80, Checkout.checkout("EEB").intValue());
+		assertEquals(120, Checkout.checkout("NNNM").intValue());
+		assertEquals(150, Checkout.checkout("RRRQ").intValue());
 	}
 }

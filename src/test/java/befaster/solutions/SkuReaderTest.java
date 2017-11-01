@@ -15,12 +15,12 @@ public class SkuReaderTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void throwsExceptionOnInvalidInput() {
-		underTest.parseSkus("Z");
+		underTest.parseSkus("_");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void throwsExceptionOnLaterInvalidInput() {
-		underTest.parseSkus("ABCDZ");
+		underTest.parseSkus("ABCD_");
 	}
 	
 	@Test
